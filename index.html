@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080808">
+    <title>Postulación | Payacán Tattoo Academy</title>
+    <meta
+      name="description"
+      content="Proceso de admisión para Payacán Tattoo Academy."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="academy-header">
+        <img
+          class="official-logo"
+          src="assets/logo-payacan-oficial.png"
+          alt="Payacán Tattoo Academy"
+        >
+        <p class="location">Santiago de Chile</p>
+      </header>
+
+      <section class="hero-editorial" aria-label="Presentación de la academia">
+        <div class="hero-copy">
+          <p class="kicker">Proceso de Admisión</p>
+          <h1>Experiencia.<br>Visión.<br>Arte.</h1>
+          <div class="hero-lines" aria-hidden="true"></div>
+          <p class="header-copy">
+            Formación especializada para desarrollar técnica, composición e
+            identidad artística dentro del tatuaje.
+          </p>
+          <a class="hero-link" href="#postulacion">Iniciar postulación</a>
+        </div>
+        <figure class="hero-image">
+          <img
+            src="assets/dossier-tattoo-detail.jpg"
+            alt="Proceso profesional de tatuaje en estudio"
+          >
+          <figcaption>Arte <span></span> Técnica <span></span> Disciplina</figcaption>
+        </figure>
+      </section>
+
+      <section class="application-shell" id="postulacion">
+        <header class="form-intro">
+          <div class="section-rule">
+            <span>Admisión</span>
+          </div>
+          <p class="kicker">Proceso de Admisión</p>
+          <h2>Postulación</h2>
+          <p>
+            Completa tus antecedentes para recibir orientación sobre el
+            programa que corresponde a tu desarrollo artístico.
+          </p>
+        </header>
+        <form id="admission-form" class="admission-form">
+          <fieldset class="form-section">
+            <legend><span>01</span> Datos personales</legend>
+            <div class="field-grid">
+              <label class="field field-wide">
+                <span>Nombre completo <strong>*</strong></span>
+                <input
+                  type="text"
+                  name="nombre"
+                  autocomplete="name"
+                  placeholder="Nombre y apellido"
+                  required
+                >
+              </label>
+
+              <label class="field">
+                <span>WhatsApp <strong>*</strong></span>
+                <input
+                  type="tel"
+                  name="whatsapp"
+                  autocomplete="tel"
+                  placeholder="+56 9 1234 5678"
+                  required
+                >
+              </label>
+
+              <label class="field">
+                <span>Correo electrónico <strong>*</strong></span>
+                <input
+                  type="email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="nombre@correo.com"
+                  required
+                >
+              </label>
+
+              <label class="field">
+                <span>Ciudad o comuna <strong>*</strong></span>
+                <input
+                  type="text"
+                  name="ciudad"
+                  autocomplete="address-level2"
+                  placeholder="Ciudad o comuna"
+                  required
+                >
+              </label>
+
+              <label class="field">
+                <span>Rango de edad <strong>*</strong></span>
+                <select name="edad" id="age-range" required>
+                  <option value="">Seleccionar</option>
+                  <option value="Menor de 18 años">Menor de 18 años</option>
+                  <option value="18 a 24 años">18 a 24 años</option>
+                  <option value="25 a 34 años">25 a 34 años</option>
+                  <option value="35 años o más">35 años o más</option>
+                </select>
+              </label>
+
+              <label class="field field-wide guardian-field" id="guardian-field" hidden>
+                <span>Nombre y contacto del tutor responsable <strong>*</strong></span>
+                <input
+                  id="guardian"
+                  type="text"
+                  name="tutor"
+                  placeholder="Nombre y teléfono del adulto responsable"
+                >
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend><span>02</span> Programa de interés</legend>
+            <p class="group-label">Selecciona un programa <strong>*</strong></p>
+            <div class="choice-grid program-grid" id="course-options">
+              <label class="choice">
+                <input type="radio" name="interes" value="Introducción al Tattoo">
+                <span>Introducción al Tattoo</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="interes" value="Curso Básico">
+                <span>Curso Básico</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="interes" value="Curso Básico + Kit">
+                <span>Curso Básico + Kit</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="interes" value="Curso Profesional">
+                <span>Curso Profesional</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="interes" value="Curso Profesional + Kit">
+                <span>Curso Profesional + Kit</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="interes" value="Especializaciones">
+                <span>Especializaciones</span>
+              </label>
+            </div>
+
+            <p class="group-label specialty-label">Campo de especialización</p>
+            <div class="choice-grid specialty-grid">
+              <label class="choice">
+                <input type="checkbox" name="especializacion" value="Realismo">
+                <span>Realismo</span>
+              </label>
+              <label class="choice">
+                <input type="checkbox" name="especializacion" value="Fine Line">
+                <span>Fine Line</span>
+              </label>
+              <label class="choice">
+                <input type="checkbox" name="especializacion" value="Blackwork">
+                <span>Blackwork</span>
+              </label>
+              <label class="choice">
+                <input type="checkbox" name="especializacion" value="Cover Up">
+                <span>Cover Up</span>
+              </label>
+              <label class="choice">
+                <input type="checkbox" name="especializacion" value="Diseño y composición">
+                <span>Diseño y composición</span>
+              </label>
+              <label class="choice">
+                <input type="checkbox" name="especializacion" value="Marketing para tatuadores">
+                <span>Marketing para tatuadores</span>
+              </label>
+            </div>
+
+            <div class="field-grid spaced">
+              <label class="field">
+                <span>Experiencia actual <strong>*</strong></span>
+                <select name="experiencia" required>
+                  <option value="">Seleccionar nivel</option>
+                  <option value="Sin experiencia">Sin experiencia</option>
+                  <option value="Practico dibujo, no tatuaje">Dibujo, pero no tatúo</option>
+                  <option value="Practico en piel sintética">Practico en piel sintética</option>
+                  <option value="Ya tatúo clientes">Ya tatúo clientes</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Modalidad preferida <strong>*</strong></span>
+                <select name="modalidad" required>
+                  <option value="">Seleccionar modalidad</option>
+                  <option value="Presencial">Presencial</option>
+                  <option value="Online">Online</option>
+                  <option value="Híbrida">Híbrida</option>
+                  <option value="Quiero orientación">Quiero orientación</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Horario preferido <strong>*</strong></span>
+                <select name="horario" required>
+                  <option value="">Seleccionar horario</option>
+                  <option value="Mañana">Mañana</option>
+                  <option value="Tarde">Tarde</option>
+                  <option value="Noche">Noche</option>
+                  <option value="Fin de semana">Fin de semana</option>
+                  <option value="Flexible">Flexible</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Inicio preferido</span>
+                <input type="month" name="inicio">
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend><span>03</span> Visión personal</legend>
+            <div class="field-grid">
+              <label class="field field-wide">
+                <span>¿Qué buscas construir dentro del tatuaje? <strong>*</strong></span>
+                <textarea
+                  name="motivacion"
+                  rows="5"
+                  placeholder="Cuéntanos sobre tu visión, intereses y objetivos."
+                  required
+                ></textarea>
+              </label>
+
+              <label class="field field-wide">
+                <span>Instagram o portafolio</span>
+                <input type="text" name="portafolio" placeholder="@usuario o enlace">
+              </label>
+
+              <label class="field field-wide">
+                <span>Preguntas o comentarios</span>
+                <textarea
+                  name="comentarios"
+                  rows="3"
+                  placeholder="Fechas, valores, materiales u otra consulta."
+                ></textarea>
+              </label>
+            </div>
+          </fieldset>
+
+          <label class="consent">
+            <input type="checkbox" name="consentimiento" required>
+            <span>
+              Autorizo a Payacán Tattoo Academy a contactarme para gestionar mi
+              postulación e informarme sobre sus programas. <strong>*</strong>
+            </span>
+          </label>
+
+          <button class="submit-button" type="submit">
+            Enviar postulación
+          </button>
+        </form>
+
+        <section class="result" id="result" aria-live="polite" hidden>
+          <p class="kicker">Postulación preparada</p>
+          <h2>Gracias por tu interés.</h2>
+          <p id="delivery-message">
+            Tu postulación está lista para ser enviada a la academia.
+          </p>
+          <pre id="request-summary"></pre>
+          <div class="result-actions">
+            <a class="submit-button whatsapp-button" id="whatsapp-link" hidden>
+              Enviar por WhatsApp
+            </a>
+            <button class="secondary-button" id="download-button" type="button">
+              Descargar postulación
+            </button>
+            <button class="text-button" id="new-request" type="button">
+              Iniciar nueva postulación
+            </button>
+          </div>
+        </section>
+      </section>
+
+      <footer class="footer">
+        <p>Payacán Tattoo Academy</p>
+        <span aria-hidden="true"></span>
+        <p>Formación artística especializada</p>
+      </footer>
+    </main>
+  </body>
+</html>
