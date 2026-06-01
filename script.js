@@ -1,6 +1,8 @@
 const academyConfig = {
   // Ingresa el WhatsApp oficial en formato internacional, solo números. Ej: "56912345678".
   whatsappNumber: "56965428096",
+  sheetsEndpoint:
+    "https://script.google.com/macros/s/AKfycbwWNDSsSIbAQjScWjF7IpOjEGd2FdeqxxjkAVY1vnN3EA6BxIPVDKxGe112dJRgiEo5uw/exec",
 };
 
 const form = document.querySelector("#admission-form");
@@ -99,12 +101,27 @@ function configureDelivery(summary) {
     "Tu postulación está lista para descargar. El envío directo por WhatsApp se habilitará con el número oficial de la academia.";
 }
 
+async function saveApplication(data) {
+  if (!academyConfig.sheetsEndpoint) return;
+
+  const payload = Object.fromEntries(data.entries());
+  payload.especializacion = data.getAll("especializacion");
+  payload.consentimiento = data.get("consentimiento") === "on";
+
+  await fetch(academyConfig.sheetsEndpoint, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(payload),
+  });
+}
+
 ageRange.addEventListener("change", updateGuardianField);
 courseChecks.forEach((checkbox) => {
   checkbox.addEventListener("change", validateCourseSelection);
 });
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
   if (!validateCourseSelection()) {
     form.reportValidity();
@@ -113,7 +130,9 @@ form.addEventListener("submit", (event) => {
 
   if (!form.reportValidity()) return;
 
-  latestSummary = createSummary(new FormData(form));
+  const applicationData = new FormData(form);
+  latestSummary = createSummary(applicationData);
+  await saveApplication(applicationData);
   summaryElement.textContent = latestSummary;
   configureDelivery(latestSummary);
   form.hidden = true;
